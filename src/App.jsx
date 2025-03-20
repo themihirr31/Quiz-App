@@ -131,6 +131,11 @@ const initialQuestions = [
     ],
     correctAnswer: "Antarctic Desert",
   },
+  {
+    question: "What is 2 + 2?",
+    options: ["1", "2", "4", "42"],
+    correctAnswer: "4",
+  },
 ];
 
 function App() {

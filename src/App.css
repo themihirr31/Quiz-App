@@ -1,0 +1,261 @@
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Main App Container */
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #0f172a, #1e293b);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quiz Wrapper */
+.quiz-wrapper {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  background-color: #1e293b;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Quiz Header */
+.quiz-header {
+  margin-bottom: 16px;
+}
+
+.quiz-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #60a5fa, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+
+.quiz-subtitle {
+  font-size: 1rem;
+  color: #94a3b8;
+}
+
+/* Score Box (When Quiz is Complete) */
+.score-box {
+  background-color: #1e293b;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fade-in 0.5s ease-in-out;
+  margin: 0 auto;
+}
+
+.score-display {
+  font-size: 3.75rem;
+  font-weight: bold;
+  color: #10b981;
+  margin-bottom: 16px;
+}
+
+.score-total {
+  color: #94a3b8;
+}
+
+.score-message {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 24px;
+}
+
+.play-again-button {
+  background: linear-gradient(to right, #3b82f6, #a855f7);
+  color: #ffffff;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 200ms;
+}
+
+.play-again-button:hover,
+.play-again-button:focus {
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Quiz Content (When Quiz is In Progress) */
+.quiz-content {
+  background-color: #1e293b;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  animation: fade-in 0.5s ease-in-out;
+}
+
+/* Quiz Info (Question Count & Score Indicator) */
+.quiz-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.question-count {
+  font-size: 1rem;
+  color: #94a3b8;
+}
+
+.current-question {
+  font-weight: bold;
+  color: #e2e8f0;
+}
+
+.score-indicator {
+  background-color: #334155;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #10b981;
+}
+
+/* Question Text */
+.question-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* Options Grid */
+.options-grid {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* Option Buttons */
+.option-button {
+  padding: 16px;
+  text-align: left;
+  border-radius: 12px;
+  font-weight: 500;
+  border: 2px solid;
+  transition: all 200ms;
+  cursor: pointer;
+}
+
+/* Default Option State */
+.option-default {
+  background-color: rgba(51, 65, 85, 0.5); /* slate-700 at 50% opacity */
+  border-color: #475569;
+  color: #f1f5f9;
+}
+
+.option-default:hover {
+  background-color: #334155;
+  border-color: #64748b;
+}
+
+/* Correct Option */
+.option-correct {
+  background-color: rgba(16, 185, 129, 0.3);
+  border-color: #10b981;
+  color: #d1fae5;
+}
+
+/* Incorrect Option */
+.option-incorrect {
+  background-color: rgba(244, 63, 94, 0.3);
+  border-color: #f43f5e;
+  color: #fecaca;
+}
+
+/* Disabled State */
+.disabled {
+  cursor: default;
+}
+
+/* Hover Scale Effect for Options */
+.hover-scale:hover {
+  transform: scale(1.01);
+}
+
+/* Progress Section */
+.progress-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  background-color: #334155;
+  border-radius: 9999px;
+  height: 8px;
+  margin-right: 16px;
+}
+
+.progress-bar-fill {
+  height: 8px;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #60a5fa, #a855f7);
+  transition: width 500ms;
+}
+
+/* Next Button */
+.next-button {
+  margin-left: 16px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: transform 200ms;
+}
+
+.active-next {
+  background: linear-gradient(to right, #3b82f6, #a855f7);
+  color: #fff;
+}
+
+.active-next:hover {
+  transform: scale(1.05);
+}
+
+.inactive-next {
+  background-color: #334155;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Time Container */
+.time-container {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Fade-in Animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

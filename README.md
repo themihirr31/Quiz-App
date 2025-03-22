@@ -1,5 +1,5 @@
 Quiz App
-A sophisticated quiz application built with ReactJS that offers an engaging and interactive user experience. The app is designed as a single-page application (SPA) with a focus on performance, accessibility, and clean design. It is deployed live on Vercel and can be accessed here.
+A sophisticated quiz application built with ReactJS that offers an engaging and interactive user experience. The app is designed as a single-page application (SPA) with a focus on performance, accessibility, and clean design. It is deployed live on Vercel and can be accessed https://quiz-app-alpha-ruddy.vercel.app/.
 
 Table of Contents
 Overview

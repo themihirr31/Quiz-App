@@ -259,3 +259,34 @@ body {
     opacity: 1;
   }
 }
+
+/* Media Query for Tablets (768px and below) */
+@media (max-width: 768px) {
+  .quiz-wrapper {
+    padding: 16px;
+    max-width: 90%;
+  }
+  .quiz-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Media Query for Mobile (480px and below) */
+@media (max-width: 480px) {
+  .quiz-wrapper {
+    padding: 12px;
+  }
+  .quiz-title {
+    font-size: 1.5rem;
+  }
+  .score-display {
+    font-size: 2rem;
+  }
+  .question-text {
+    font-size: 1rem;
+  }
+  .option-button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}

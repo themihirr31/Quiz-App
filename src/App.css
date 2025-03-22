@@ -262,9 +262,12 @@ body {
 
 /* Media Query for Tablets (768px and below) */
 @media (max-width: 768px) {
+  .app-container {
+    padding: 0rem;
+  }
   .quiz-wrapper {
     padding: 16px;
-    max-width: 100%;
+    max-width: 90%;
   }
   .quiz-title {
     font-size: 1.75rem;
@@ -273,6 +276,9 @@ body {
 
 /* Media Query for Mobile (480px and below) */
 @media (max-width: 480px) {
+  .app-container {
+    padding: 0rem;
+  }
   .quiz-wrapper {
     padding: 12px;
   }

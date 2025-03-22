@@ -264,7 +264,7 @@ body {
 @media (max-width: 768px) {
   .quiz-wrapper {
     padding: 16px;
-    max-width: 90%;
+    max-width: 100%;
   }
   .quiz-title {
     font-size: 1.75rem;

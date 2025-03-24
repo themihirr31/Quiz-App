@@ -8,7 +8,7 @@ body {
 /* Main App Container */
 .app-container {
   min-height: 100vh;
-  background: linear-gradient(to bottom right, #0f172a, #1e293b);
+  background: linear-gradient(to bottom right, #0949de, #072149);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +20,7 @@ body {
   width: 100%;
   max-width: 640px;
   margin: 0 auto;
-  background-color: #1e293b;
+  background-color: #6b86b2;
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -36,7 +36,7 @@ body {
 .quiz-title {
   font-size: 2.25rem;
   font-weight: bold;
-  background: linear-gradient(to right, #60a5fa, #a855f7);
+  background: linear-gradient(to right, #003678, #9639ee);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 8px;
@@ -44,7 +44,7 @@ body {
 
 .quiz-subtitle {
   font-size: 1rem;
-  color: #94a3b8;
+  color: #cbd0d5;
 }
 
 /* Score Box (When Quiz is Complete) */
@@ -61,7 +61,7 @@ body {
 .score-display {
   font-size: 3.75rem;
   font-weight: bold;
-  color: #10b981;
+  color: #0effaf;
   margin-bottom: 16px;
 }
 
@@ -95,7 +95,7 @@ body {
 
 /* Quiz Content (When Quiz is In Progress) */
 .quiz-content {
-  background-color: #1e293b;
+  background-color: #2d5594;
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -105,14 +105,25 @@ body {
 /* Quiz Info (Question Count & Score Indicator) */
 .quiz-info {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   margin-bottom: 16px;
 }
 
 .question-count {
+  width: 100%;
   font-size: 1rem;
   color: #94a3b8;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.center-btn {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .current-question {
@@ -269,6 +280,9 @@ body {
   .quiz-title {
     font-size: 1.75rem;
   }
+  .center-btn {
+    width: 65%;
+  }
 }
 
 /* Media Query for Mobile (480px and below) */
@@ -288,5 +302,8 @@ body {
   .option-button {
     font-size: 0.9rem;
     padding: 10px;
+  }
+  .center-btn {
+    width: 40%;
   }
 }

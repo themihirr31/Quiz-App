@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 const shuffleArray = (array) => {
@@ -616,6 +616,15 @@ function App() {
   const [showScore, setShowScore] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isCorrect, setIsCorrect] = useState(null);
+  const [lifelineUsed, setLifelineUsed] = useState(false);
+  const [availableOptions, setAvailableOptions] = useState(
+    questions[currentQuestion].options
+  );
+
+  // Reset available options when moving to a new question
+  useEffect(() => {
+    setAvailableOptions(questions[currentQuestion].options);
+  }, [currentQuestion, questions]);
 
   const handleAnswer = (option) => {
     setSelectedOption(option);
@@ -637,6 +646,23 @@ function App() {
     }
   };
 
+  const handleLifeline = () => {
+    // Only allow lifeline if not used and if answer hasn't been selected yet
+    if (!lifelineUsed && selectedOption === null) {
+      const current = questions[currentQuestion];
+      const wrongOptions = current.options.filter(
+        (option) => option !== current.correctAnswer
+      );
+      // Randomly choose one wrong option to keep along with the correct answer
+      const randomWrong =
+        wrongOptions[Math.floor(Math.random() * wrongOptions.length)];
+      const newOptions = [current.correctAnswer, randomWrong];
+      // Optionally, shuffle the new options so correct answer isn’t always in the same place
+      setAvailableOptions(shuffleArray(newOptions));
+      setLifelineUsed(true);
+    }
+  };
+
   const restartQuiz = () => {
     setQuestions(getRandomQuiz());
     setCurrentQuestion(0);
@@ -644,6 +670,8 @@ function App() {
     setShowScore(false);
     setSelectedOption(null);
     setIsCorrect(null);
+    // Reset lifeline usage for new game
+    setLifelineUsed(false);
   };
 
   return (
@@ -682,6 +710,11 @@ function App() {
                   <div className="score-indicator">Score: {score}</div>
                 </div>
               </div>
+              {!lifelineUsed && selectedOption === null && (
+                <button onClick={handleLifeline} className="lifeline-button">
+                  50-50 lifeline
+                </button>
+              )}
             </div>
 
             <h2 className="question-text">
@@ -689,7 +722,7 @@ function App() {
             </h2>
 
             <div className="options-grid">
-              {questions[currentQuestion].options.map((option, index) => (
+              {availableOptions.map((option, index) => (
                 <button
                   key={index}
                   onClick={() => handleAnswer(option)}

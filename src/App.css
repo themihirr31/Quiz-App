@@ -454,6 +454,7 @@ body {
     width: 40%;
   }
   .mode-toggle {
+    width: 100%;
     margin-bottom: 20px;
     display: flex;
     justify-content: center;

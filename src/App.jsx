@@ -620,6 +620,7 @@ function App() {
   const [availableOptions, setAvailableOptions] = useState(
     questions[currentQuestion].options
   );
+  const [darkMode, setDarkMode] = useState(false);
 
   // Reset available options when moving to a new question
   useEffect(() => {
@@ -674,8 +675,15 @@ function App() {
     setLifelineUsed(false);
   };
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <div className="app-container">
+    <div className={`app-container ${darkMode ? "dark-mode" : "light-mode"}`}>
+      <button onClick={toggleDarkMode} className="mode-toggle">
+        {darkMode ? "Light Mode" : "Dark Mode"}
+      </button>
       <div className="quiz-wrapper">
         <div className="quiz-header">
           <h1 className="quiz-title">Quick Quiz</h1>

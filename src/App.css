@@ -453,4 +453,7 @@ body {
   .center-btn {
     width: 40%;
   }
+  .mode-toggle {
+    margin-bottom: 20px;
+  }
 }
